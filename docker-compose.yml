@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: farmadmin
+      POSTGRES_PASSWORD: harvest2025
+      POSTGRES_DB: farm_tenants
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: farm_tenants
+      DB_USER: farmadmin
+      DB_PASSWORD: harvest2025
+    depends_on:
+      - postgres
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+volumes:
+  pgdata: 
