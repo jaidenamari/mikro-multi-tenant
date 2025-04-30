@@ -1,6 +1,6 @@
 # Farm Tenants - Multi-Tenant Database Example
 
-This project demonstrates a multi-tenant database setup using MikroORM, PostgreSQL, and Express. It's designed for a fictional "Community Farm Management" application where each farm organization gets its own isolated database.
+This project demonstrates a multi-tenant database setup using MikroORM, PostgreSQL, and Express. It's a prototype application, using a Community Supported Agriculture example, where each farm organization gets its own isolated database.
 
 ## Features
 
